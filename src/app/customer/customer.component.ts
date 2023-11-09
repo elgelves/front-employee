@@ -38,15 +38,7 @@ register(){
     "employeeMobile" : this.employeeMobile
   }
 
-  this.http.post("http://localhost:8080/api/employee/save",bodyData,{responseType: "text"}).subscribe((resultData: any) =>{
-    console.log(resultData);
-    alert("Employee Registered SuccessFully");
-    this.getAllEmployees();
-
-    this.employeeName = '';
-    this.employeeEmail = '';
-    this.employeeMobile =0;
-  });
+  // Escribir código para poder ejecutar el almacenamiento y funcione el consumo de la funcionalidad de esta API REST
 }
 
 clear(){
