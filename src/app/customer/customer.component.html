@@ -1,0 +1,62 @@
+<div class="row">
+<div class="col-md-5">
+<h4>Create Employee</h4>
+<hr/>
+<div class="card card-body bg-light">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" [(ngModel)]="employeeName" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" [(ngModel)]="employeeEmail" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" [(ngModel)]="employeeMobile" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Mobile">
+        </div>
+        <br/>
+        <div class="form-group">
+            <button type="reset" class="btn btn-danger" (click) ="clear()">Clear</button> &nbsp;
+            
+            <button type="submit" class="btn btn-primary" (click)="save()" >Save</button>
+        </div>
+    </form>
+
+</div>
+
+</div>
+<div class="col-md-7">
+    <h4>List Employee</h4>
+    <hr/>
+    <div class="card card-body bg-light">
+        <table class="table">
+         <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Option</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let EmployeeItem of EmployeeArray">
+                <th scope="row">{{EmployeeItem.employeeId}}</th>
+                <td>{{EmployeeItem.employeeName}}</td>
+                <td>{{EmployeeItem.employeeEmail}}</td>
+                <td>{{EmployeeItem.employeeMobile}}</td>
+                <td>
+                    <button class="btn btn-primary" (click) = "setUpdate(EmployeeItem)">Edit</button>&nbsp;
+                    <button class="btn btn-danger" (click) = "setDelete(EmployeeItem)">Delete</button>
+                </td>
+            </tr>
+
+           
+         </tbody>   
+        </table>
+    </div>
+</div>
+
+</div>
